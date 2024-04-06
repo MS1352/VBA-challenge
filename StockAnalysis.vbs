@@ -104,7 +104,7 @@ Sub FormatColumns(ws As Worksheet)
     ' Find the last row in the worksheet
     lastRow = ws.Cells(ws.Rows.Count, "J").End(xlUp).Row
     
-    ' Format column 10 (Yearly Change)
+    ' Format column 10 and 11(Yearly Change)
     Call ApplyConditionalFormatting(ws)
     
     ' Format column 11 (Total Stock Volume) as percentage
@@ -122,8 +122,8 @@ Sub ApplyConditionalFormatting(ws As Worksheet)
     ' Find the last row in the worksheet
     lastRow = ws.Cells(ws.Rows.Count, "J").End(xlUp).Row
     
-    ' Define the range for column 10 (Yearly Change)
-    Set rng = ws.Range(ws.Cells(2, 10), ws.Cells(lastRow, 10))
+    ' Define the range for column 10 and 11 (Yearly Changes)
+    Set rng = ws.Range(ws.Cells(2, 10), ws.Cells(lastRow, 11))
     
     ' Clear existing conditional formatting rules
     rng.FormatConditions.Delete
